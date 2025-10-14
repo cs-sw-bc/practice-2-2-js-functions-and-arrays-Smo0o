@@ -1,19 +1,34 @@
-/* =============================================================
-     🎯 ASSIGNMENT: TIP & BILL SPLIT CALCULATOR
-     -------------------------------------------------------------
-     GOAL: Practice variables, arithmetic operations, conditionals & functions.
-     -------------------------------------------------------------
+function generateMoodMessage() {
+    let bill = document.getElementById("bill").value;
+    let people = document.getElementById("people").value;
+    let meal = null;
+    if (bill < 20) {
+        meal = "Budget Friendly Meal";
+    } else if (bill > 200 && people > 4) {
+        meal = "party vibes";
+    } else if (people === 1) {
+        meal = "solo dining";
+    }
+    else {
+        meal = "casual dinner night"
+    }
+    alert(`your meal is a ${meal}`);
+}
 
-     📝 INSTRUCTIONS:
+function calculateTip() {
+    let tip = document.getElementById("tip").value;
+    let bill = document.getElementById("bill").value
+    let tipamount = (bill * tip / 100);
+    alert(`your bill is ${bill} and your tip percent is ${tip}%`);
+    alert(`your total pay for tipping is ${tipamount}$`);
+    return tipamount;
+    
+}
 
-     0️⃣ STEP ZERO: Connect script file TO HTML
-     1️⃣ Create a function named generateMoodMessage() that:
-         - Reads the bill amount and number of people.
-         - Displays a fun message based on values entered:
-             • If bill < 20 → "Budget-friendly meal 👌"
-             • If bill > 200 and people > 4 → "Party vibes 🥳"
-             • If people === 1 → "Solo dining! Self-care mode on 🍲"
-             • Otherwise → "Casual dinner night 🍽️"
+ 
+
+
+/* 
          - This shows how JavaScript reacts differently based on conditions.
 
      2️⃣ Create a function named calculateTip() that:
