@@ -25,6 +25,27 @@ function calculateTip() {
     
 }
 
+function splitBill() {
+  // Get all input values as numbers
+  let people = Number(document.getElementById("people").value);
+  let bill = Number(document.getElementById("bill").value);
+  let tipPercent = Number(document.getElementById("tip").value);
+
+  // Calculate tip manually here instead of calling calculateTip()
+  let tipAmount = bill * (tipPercent / 100);
+
+  // Calculate per-person total
+  let total = (bill + tipAmount) / people;
+
+  alert("Each person should pay $" + total.toFixed(2));
+
+  if (total <= 55) {
+    alert("Wow, that's pretty cheap!");
+  } else {
+    alert("That is super expensive!!");
+  }
+}
+
  
 
 
